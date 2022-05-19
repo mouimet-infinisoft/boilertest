@@ -134,20 +134,54 @@ Verify dependencies...
 };
 
 /**
- * cli entry point
+ * Welcome banner
+ */
+const welcome = () => {
+  console.log(`
+  **************************
+  Monorepo boilerplate
+  Command Line Interface
+  ${name} ${version}
+  **************************
+  Totaly open configuration without eject
+  React 18, Webpack 5, Typescript, Lerna 4`);
+};
+
+/**
+ * Cli usage informations
+ */
+const usage = () => {
+  console.log(`
+  Usage
+  $ ${process.argv[1]} <commands> [arguments] [--options]
+
+  commands      arguments     description
+  create        <target>      - Create new monorepo top <target> folder.
+                                Default folder is ./
+
+  options
+  --debug                     - Verbose mode
+
+  `);
+};
+
+/**
+ * Initialize cli
  */
 const initialize = () => {
-  console.log(`
-**************************
-${name} ${version}
-**************************
-
-Initializing...
-`);
-
   if (VERBOSE) {
     console.log(`initialize() argv `, process.argv);
   }
+
+  if (process.argv.length < 3) {
+    usage();
+    process.exit();
+  }
+
+  console.log(`
+  Initializing...
+  `);
+
   verifyAllDependencies();
 };
 
@@ -186,10 +220,26 @@ const install = (folder = '.') => {
   exec(`yarn`);
 
   console.log(`
-    Installing dependencies completed!
-  ----------------------`);
+    Installing dependencies completed!`);
 };
 
+const complete = () => {
+  console.log(`
+
+  Mono repo ready to use
+  Powered 🚀 by Infinisoft Inc.
+  Happy ☠️  Hacking
+
+  configurations: dev/
+
+  Visit the kitchen, ALOT is comming soon
+  https://kitchen.infini-soft.com
+
+  `);
+};
+
+welcome();
 initialize();
 clone(process.argv[3]);
 install(process.argv[3]);
+complete();

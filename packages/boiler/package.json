@@ -16,13 +16,7 @@
     "type": "git",
     "url": "https://github.com/mouimet-infinisoft/boilertest.git"
   },
-  "scripts": {
-    "build:dev": "webpack -c webpack.config.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage&& start coverage/lcov-report/index.html",
-    "build:analyze": "webpack -c ../../dev/config/webpack.analyze.js",
-    "build:prod": "webpack -c ../../dev/config/npm lwebpack.prod.js"
-  },
+  "scripts": {},
   "devDependencies": {
     "@types/node": "^17.0.35"
   }

@@ -8,21 +8,14 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+// const TerserPlugin = require("terser-webpack-plugin"); // Issue with module federation
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
   context: process.cwd(),
-  // target: "web",
   plugins: [
     new MomentLocalesPlugin(),
-    // new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    // new webpack.NormalModuleReplacementPlugin(
-    //   /(global\.less)*/g,
-    //  "./empty.less"
-    // ),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../templates/index.html"),
       title: "Infinisoft Boilerplate"
@@ -34,6 +27,7 @@ module.exports = {
     publicPath: 'auto',
     clean: true
   },
+  // Issue with module federation
   // optimization: {
   //   moduleIds: 'deterministic',
   //   usedExports: true,

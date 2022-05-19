@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
-const {repository, name, version} = require('../package.json')
+const { chdir } = require('process');
+const { repository, name, version } = require('../package.json');
 
-const REPO_URL = repository.url
+const REPO_URL = repository.url;
 const VERBOSE = process.argv.join(' ').includes('--debug');
 
 /**
@@ -106,7 +107,7 @@ const tryRecoverFailure = (cmd) => () => {
  * Verify all dependencies
  */
 const verifyAllDependencies = () => {
-console.log(`
+  console.log(`
 Verify dependencies...
 ----------------------
 `);
@@ -128,7 +129,7 @@ Verify dependencies...
     tryRecoverFailure(`echo install node`),
   );
 
-console.log(`Verify dependencies completed!
+  console.log(`Verify dependencies completed!
 ------------------------------`);
 };
 
@@ -144,20 +145,51 @@ ${name} ${version}
 Initializing...
 `);
 
+  if (VERBOSE) {
+    console.log(`initialize() argv `, process.argv);
+  }
   verifyAllDependencies();
 };
 
-const clone = () => {
-  exec(`git clone ${REPO_URL}`)
-}
+/**
+ * Clone git repo
+ * @param {string} folder
+ */
+const clone = (folder = '.') => {
+  console.log(`
+Cloning repo...
+----------------------`);
 
-const install = () => {
+  if (VERBOSE) {
+    console.log(`clone() folder `, folder);
+  }
+  exec(`git clone ${REPO_URL} ${folder}`);
 
-}
+  console.log(`
+Cloning completed!
+----------------------`);
+};
 
+/**
+ * Dependencies installtion
+ * @param {string} folder
+ */
+const install = (folder = '.') => {
+  console.log(`
+  Installing dependencies...
+  ----------------------`);
+
+  if (VERBOSE) {
+    console.log(`install() folder `, folder);
+  }
+  chdir(folder);
+  exec(`yarn`);
+
+  console.log(`
+    Installing dependencies completed!
+  ----------------------`);
+};
 
 initialize();
-clone();
-install();
-
-
+clone(process.argv[3]);
+install(process.argv[3]);

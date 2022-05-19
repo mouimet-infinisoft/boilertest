@@ -1,5 +1,6 @@
 const { chdir } = require('process');
 const { exec } = require('./exec');
+const {join} = require('path')
 
 const VERBOSE = process.argv.join(' ').includes('--debug');
 const DRYRUN = process.argv.join(' ').includes('--dry-run');
@@ -18,8 +19,8 @@ Post installation...
   }
 
   if (!DRYRUN) {
-    exec(`rm -rf .git`);
-    exec(`git --init`);
+    exec(`rm -rf ${join(folder,'.git')}`);
+    exec(`git init ${folder}`);
   }
 }
 module.exports = { postInstall };

@@ -14,8 +14,7 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
   context: process.cwd(),
-  target: "web",
-  entry: path.join(process.cwd(), "/src/index.tsx"),
+  // target: "web",
   plugins: [
     new MomentLocalesPlugin(),
     new webpack.NormalModuleReplacementPlugin(
@@ -26,30 +25,31 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../templates/index.html"),
-      title: "Infinisoft Boiler Plate"
+      title: "Infinisoft Boilerplate"
     })
   ],
   output: {
     filename: "[name].[contenthash].js",
     path: path.join(process.cwd(), "dist"),
+    publicPath: 'auto',
     clean: true
   },
-  optimization: {
-    moduleIds: 'deterministic',
-    usedExports: true,
-    runtimeChunk: 'multiple',
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: "all"
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   moduleIds: 'deterministic',
+  //   usedExports: true,
+  //   runtimeChunk: 'multiple',
+  //   minimize: true,
+  //   minimizer: [new TerserPlugin()],
+  //   splitChunks: {
+  //     chunks: "all",
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         chunks: "all"
+  //       }
+  //     }
+  //   }
+  // },
   resolve: {
     cacheWithContext: false,
     extensions: [".tsx", ".ts", ".jsx", ".js"]
@@ -67,32 +67,12 @@ module.exports = {
               ["@babel/preset-react", {"runtime": "automatic"}]
             ],
             plugins: [
-              // modularly import the JS and styles that we use from ‘antd’
-              // [
-              //   'import',
-              //   { libraryName: 'antd', style: true },
-              //   'antd',
-              // ],
-              // // modularly import the JS that we use from ‘@ant-design/icons’
-              // [
-              //   'import',
-              //   {
-              //     libraryName: '@ant-design/icons',
-              //     libraryDirectory: 'es/icons',
-              //   },
-              //   'antd-icons',
-              // ],
               'lodash',
             ],
           }
         },
         exclude: /node_modules/
       },
-      // {
-      //   test: /\.tsx?$/,
-      //   use: "ts-loader",
-      //   exclude: /node_modules/
-      // },
       {
         test: /\.less$/i,
         use: [

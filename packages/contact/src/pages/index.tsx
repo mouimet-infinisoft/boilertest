@@ -2,7 +2,7 @@
  * Copyright © All rights reserved 2022
  * Infinisoft Inc.
  * www.infini-soft.com
- * 
+ *
  * Micro app entry point
  * Context Provider is created with localization, configuration andlogging
  */

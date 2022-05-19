@@ -14,7 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mouimet-infinisoft/boilertest.git"
+    "url": "https://github.com/mouimet-infinisoft/boilertest.git",
+    "template":"https://github.com/mouimet-infinisoft/monotest.git"
   },
   "scripts": {},
   "devDependencies": {

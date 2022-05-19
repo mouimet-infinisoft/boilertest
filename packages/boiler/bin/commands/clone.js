@@ -1,7 +1,7 @@
 const { repository } = require('../../package.json');
 const { exec } = require('./exec');
 
-const REPO_URL = repository.url;
+const REPO_URL = repository.template;
 const VERBOSE = process.argv.join(' ').includes('--debug');
 
 /**

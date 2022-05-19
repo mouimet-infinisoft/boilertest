@@ -1,0 +1,14 @@
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*",
+    "packages/libraries/*",
+    "packages/tools/*",
+    "packages/micro-apps/*",
+    "packages/ui-components/*",
+    "packages/solutions/*",
+    "packages/hooks/*"
+  ],
+  "version": "independent"
+}

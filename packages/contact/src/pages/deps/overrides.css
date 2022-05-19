@@ -1,0 +1,19 @@
+/*
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+
+ /*
+  * Override file is imported where required and CANT be a css module 
+  */
+
+div.ant-select-selection-overflow {
+  margin-left: 35px !important;
+}
+
+span.ant-select-selection-placeholder {
+  right: unset !important;
+  left: 0 !important;
+  margin-left: 45px !important;
+}

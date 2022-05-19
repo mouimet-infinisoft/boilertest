@@ -1,0 +1,9 @@
+{
+  "appName": "contacts",
+  "debounce": 2000,
+  "format": true,
+  "verbose": true,
+  "devMode": false,
+  "liveTheme": true,
+  "api":"https://ql1gt940md.execute-api.us-east-1.amazonaws.com"
+}

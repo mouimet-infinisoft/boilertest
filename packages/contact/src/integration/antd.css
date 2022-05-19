@@ -1,0 +1,72 @@
+/*
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+
+[class*='button-wrapper-checked'],
+[class*='ant-tree-checkbox-inner'] {
+  color: var(--text-primary) !important;
+  border: var(--colors-primary) !important;
+  border: var(--colors-primary) !important;
+  border-color: var(--colors-primary) !important;
+}
+
+[class*='wrapper-checked'] {
+  border: var(--colors-primary) !important;
+  border-color: var(--colors-primary) !important;
+}
+
+[class*='ant-radio-button-wrapper-checked'],
+[class*='switch-checked'],
+[class*='wrapper-checked'] > * > span[class*='inner'],
+[class*='checkbox-inner'] {
+  background: var(--colors-primary) !important;
+  background-color: var(--colors-primary) !important;
+}
+
+[class*='button']:focus,
+[class*='button']:hover {
+  color: var(--colors-primary) !important;
+  border-color: var(--colors-primary) !important;
+}
+
+[class*='affix-wrapper']  {
+  color: var(--colors-primary) !important;
+}
+
+[class*='wrapper-checked']:hover {
+  color: var(--text-primary) !important;
+}
+
+[class*='ant-progress-status-normal'] .ant-progress-circle-path {
+  stroke: var(--colors-primary) !important;
+}
+
+[class*='progress-status-success'] * {
+  color: green !important;
+}
+
+[class*='progress-status-exception'] * {
+  color: red !important;
+}
+
+svg {
+  color: var(--colors-primary) !important;
+}
+
+[class*='ant-notification-notice-icon-error'] > svg * {
+  color: red !important;
+}
+
+[class*='ant-notification-notice-icon-success'] > svg * {
+  color: green !important;
+}
+
+[class*='ant-notification-notice-icon-warning'] > svg * {
+  color: yellow !important;
+}
+
+[class*='ant-pro-table-column-setting-list-item-title'] {
+  color: var(--invariant-primary);
+}

@@ -1,0 +1,20 @@
+/*
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+
+.root {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.left { 
+  margin-right: 1rem;
+}
+
+.content {
+  overflow-wrap: break-word;
+  text-align: justify;
+  max-width: 250px;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@infini-soft/contacts",
+  "version": "0.0.66",
+  "description": "",
+  "author": "Infinisoft Inc. <info@infini-soft.com>",
+  "homepage": "https://www.kitchen.infini-soft.com/microapp/contacts",
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "webpack -c ../../dev/config/webpack.dev.js",
+    "test":"jest",
+    "test:coverage": "jest --coverage&& start coverage/lcov-report/index.html",
+    "build:analyze": "webpack -c ../../dev/config/webpack.analyze.js",
+    "build:prod": "webpack -c ../../dev/config/webpack.prod.js",
+    "start:dev": "webpack serve -c ../../dev/config/webpack.dev.js --open",
+    "serve:dist": "serve -s dist"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4"
+  },
+  "dependencies": {
+    "@ant-design/pro-table": "^2.72.0",
+    "@infini-soft/hooks-model": "^0.0.4",
+    "@infini-soft/hooks-theme": "^0.0.13",
+    "@infini-soft/lib-events": "^0.0.9",
+    "@infini-soft/lib-hub": "^0.0.13",
+    "@infini-soft/promises": "^1.1.33",
+    "@infini-soft/usecrudfactory": "^0.1.43",
+    "@infini-soft/utils": "^1.3.36",
+    "antd": "4.19.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
+  }
+}

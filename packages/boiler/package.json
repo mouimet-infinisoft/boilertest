@@ -1,6 +1,6 @@
 {
   "name": "@infini-soft/boiler",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "description": "",
   "author": "Infinisoft Inc. <info@infini-soft.com>",
   "homepage": "https://www.kitchen.infini-soft.com/",
@@ -27,6 +27,5 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.35"
-  },
-  "dependencies": {}
+  }
 }

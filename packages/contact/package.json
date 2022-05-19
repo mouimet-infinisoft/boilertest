@@ -1,7 +1,7 @@
 {
   "name": "contact",
-  "version": "0.0.66",
-  "private":true,
+  "version": "0.0.67-alpha.0",
+  "private": true,
   "description": "",
   "author": "Infinisoft Inc. <info@infini-soft.com>",
   "homepage": "https://www.kitchen.infini-soft.com/microapp/contacts",

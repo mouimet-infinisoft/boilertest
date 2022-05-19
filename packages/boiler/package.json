@@ -1,0 +1,32 @@
+{
+  "name": "@infini-soft/boiler",
+  "version": "0.0.2",
+  "description": "",
+  "author": "Infinisoft Inc. <info@infini-soft.com>",
+  "homepage": "https://www.kitchen.infini-soft.com/",
+  "license": "UNLICENSED",
+  "bin": {
+    "create": "./bin/cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mouimet-infinisoft/boilertest.git"
+  },
+  "scripts": {
+    "build:dev": "webpack -c webpack.config.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage&& start coverage/lcov-report/index.html",
+    "build:analyze": "webpack -c ../../dev/config/webpack.analyze.js",
+    "build:prod": "webpack -c ../../dev/config/npm lwebpack.prod.js",
+    "start:dev": "webpack serve -c webpack.config.js --open",
+    "serve:dist": "serve -s dist"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35"
+  },
+  "dependencies": {}
+}

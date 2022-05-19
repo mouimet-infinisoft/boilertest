@@ -17,12 +17,12 @@ module.exports = {
   // target: "web",
   plugins: [
     new MomentLocalesPlugin(),
-    new webpack.NormalModuleReplacementPlugin(
-      /node_modules\/antd\/es\/style\/core\/global\.less/,
-      path.join(__dirname, "../templates/antd.css")
-    ),
-    new ForkTsCheckerWebpackPlugin(),
+    // new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin(),
+    // new webpack.NormalModuleReplacementPlugin(
+    //   /(global\.less)*/g,
+    //  "./empty.less"
+    // ),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../templates/index.html"),
       title: "Infinisoft Boilerplate"

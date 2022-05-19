@@ -1,6 +1,7 @@
 {
   "name": "container",
   "version": "0.0.1",
+  "private":true,
   "description": "",
   "author": "Infinisoft Inc. <info@infini-soft.com>",
   "homepage": "https://www.kitchen.infini-soft.com/microapp/contacts",

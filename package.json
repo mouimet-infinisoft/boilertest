@@ -38,5 +38,8 @@
     "webpack-dev-server": "^4.9.0",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts":{
+    "publish:canary":"lerna publish --canary --preid canary"
+  }
 }

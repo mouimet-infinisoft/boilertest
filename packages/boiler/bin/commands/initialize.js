@@ -16,10 +16,6 @@ const initialize = () => {
     process.exit();
   }
 
-  console.log(`
-  Initializing...
-  `);
-
   verifyAllDependencies();
 };
 module.exports = {initialize};

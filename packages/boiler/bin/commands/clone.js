@@ -3,6 +3,7 @@ const { exec } = require('./exec');
 
 const REPO_URL = repository.template;
 const VERBOSE = process.argv.join(' ').includes('--debug');
+const DRYRUN = process.argv.join(' ').includes('--dry-run');
 
 /**
  * Clone git repo
@@ -16,10 +17,9 @@ Cloning repo...
   if (VERBOSE) {
     console.log(`clone() folder `, folder);
   }
-  exec(`git clone ${REPO_URL} ${folder}`);
 
-  console.log(`
-Cloning completed!
-----------------------`);
+  if (!DRYRUN) {
+    exec(`git clone ${REPO_URL} ${folder}`);
+  }
 };
 module.exports = { clone };

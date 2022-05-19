@@ -26,9 +26,5 @@ Verify dependencies...
     /(2.*)/g,
     tryRecoverFailure(`echo install node`),
   );
-
-  console.log(`Verify dependencies completed!
-------------------------------`);
-};
-
+  }
 module.exports = { verifyAllDependencies };

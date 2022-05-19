@@ -8,18 +8,18 @@ const DRYRUN = process.argv.join(' ').includes('--dry-run');
  * Dependencies installtion
  * @param {string} folder
  */
-const install = (folder = '.') => {
+const postInstall = (folder = '.') => {
   console.log(`
-Installing dependencies...
+Post installation...
 ----------------------`);
 
   if (VERBOSE) {
-    console.log(`install() folder `, folder);
+    console.log(`postInstall() folder `, folder);
   }
 
   if (!DRYRUN) {
-    chdir(folder);
-    exec(`yarn`);
+    exec(`rm -rf .git`);
+    exec(`git --init`);
   }
 }
-module.exports = { install };
+module.exports = { postInstall };
